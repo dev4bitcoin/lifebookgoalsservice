@@ -9,6 +9,7 @@ module.exports = function () {
       useUnifiedTopology: true,
       useCreateIndex: true,
       useFindAndModify: false,
+      dbName: "lifebookgoals",
     })
     .then(() => winston.info("Connected to MongoDB..."))
     .catch((err) => console.error("Could not connect to MongoDB.."));
