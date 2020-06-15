@@ -1,13 +1,15 @@
 const winston = require("winston");
 const mongoose = require("mongoose");
+const config = require("config");
 
 module.exports = function () {
   mongoose
-    .connect("mongodb://localhost/lifebookgoals", {
+    .connect(config.get("db") || "mongodb://localhost/lifebookgoals", {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,
       useFindAndModify: false,
     })
-    .then(() => console.log("Connected to MongoDB"));
+    .then(() => winston.info("Connected to MongoDB..."))
+    .catch((err) => console.error("Could not connect to MongoDB.."));
 };

@@ -1,3 +1,4 @@
 {
-  "jwtPrivateKey": "lifebookgoals_jwtPrivateKey"
+  "jwtPrivateKey": "lifebookgoals_jwtPrivateKey",
+  "db": "lifebookgoals_db"
 }

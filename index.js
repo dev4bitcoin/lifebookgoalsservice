@@ -3,9 +3,10 @@ const cors = require("cors");
 const app = express().use("*", cors());
 
 require("./startup/logging")();
-//require("./startup/config")();
+require("./startup/config")();
 require("./startup/routes")(app);
 require("./startup/db")();
+require("./startup/prod")(app);
 
 const port = process.env.port || 5000;
 
