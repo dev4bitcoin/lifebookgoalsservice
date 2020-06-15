@@ -4,7 +4,7 @@ const config = require("config");
 
 module.exports = function () {
   mongoose
-    .connect(config.get("db") || "mongodb://localhost/lifebookgoals", {
+    .connect(process.env.MONGODB_URI || "mongodb://localhost/lifebookgoals", {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,
